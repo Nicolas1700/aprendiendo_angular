@@ -1,9 +1,29 @@
-<h1>¡Hola Mundo en mi primer framework :) !</h1>
-<p>Primer parrafito</p>
+
+<!-- Event Binding "Enlace de eventos" -->
+<h1>Eventos</h1>
+<button [disabled] = "bntDisable">Enviar</button>
+<button (click)="toggleButton()"> Toogle Button :) </button>
+<br/>
+
+<!--Property bingin Con objetos-->
+<button (click)="ageMore()"> Edad ++</button>
+<p>Edad: {{Person.age}}</p>
+<button (click)="ageLees()"> Edad --</button>
+
+<!--Property [binding] “propiedad de elementos HTML”--->
+<h1> Propiedades </h1>
+<button [disabled] = "bntDisable">Enviar</button>
+<input type="text" [value] = "valueInput" >
+<hr/>
+<h2>¡Hola Mundo en mi primer framework :) !</h2>
+<progress max="100" [value]="Person.age"></progress>
+
+<!--String interpolation “Interpolación de cadenas”-->
 <br>
 <p> {{ " Parrafo repetido :)  ".repeat(5) }}  </p>
 <p> La suma de 3 + 3 = {{ 3 + 3}} </p>
 
-<h3>Hola mi nombre es: {{ name }} y mi edad es de {{ age }} años.</h3>
-<p>Imagen</p>
-<img src="{{img}}" alt="Imagen_cabezon">
+<img width="100" [src]="Person.avatar" alt="Imagen_cabezon" >
+
+
+
