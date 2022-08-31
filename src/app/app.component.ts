@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'Aprendiendo Angular';
@@ -29,4 +29,24 @@ export class AppComponent {
   ageLees(){
     this.Person.age -= 1;
   }
+
+  /* Metodo de scroll, en el cual caputaramos el evento */
+  onScroll( event: Event){
+    /* Guaramos en element el target el (elemento) HTML,
+    y este se va a comportar como un HTMLElement */
+    const element = event.target as HTMLElement;
+    /* Miramos el scroll top del elemento */
+    console.log(element.scrollTop);
+  }
+
+  /* Metoto keyup del input*/
+  changeName( event:Event ){
+    /* Caputaramos el input */
+    const element = event.target as HTMLInputElement;
+    this.Person.name = element.value;
+  }
+
+  /* Data [(binding)] */
+
+
 }

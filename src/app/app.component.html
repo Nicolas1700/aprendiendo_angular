@@ -1,4 +1,50 @@
 
+<!-- Data [(binding)] ng model-->
+<h2>Ng model</h2>
+<!-- Habilitar modulo o paquete de formulario en
+  app.module.ts -->
+<!-- Anterior input
+<input type="text" [value]="Person.name" (keyup)="changeName($event)">
+-->
+
+<!-- Con Ng model
+<input type="text" [(ngModel)]="Person.name" /> -->
+
+<!-- Ver si el valor es valido -->
+<!-- Se crea la variable con # y si iguala al ngModel,
+  luego se aplican validaciones nativas de HTML como requerid -->
+<input type="text" required #inputName="ngModel" [(ngModel)]="Person.name" />
+<!-- Miramos la validacion con el metodo .valid -->
+<p>Valido: {{ inputName.valid }}</p>
+
+<br/>
+<!-- Ejemplo con la edad :) -->
+<input type="number" min="10" max="18" required #inputAge="ngModel" [(ngModel)]="Person.age" />
+<p>Valido: {{ inputAge.valid }}</p>
+
+<br/>
+
+
+<!-- Leer eventos de un input, cada vez que escriba keyup
+<input type="text" [value]="Person.name" (keyup)="changeName($event)">
+-->
+<P>Su nombre es: {{Person.name}} </P>
+<br/>
+<br/>
+
+<!-- Otros eventos, event scroll -->
+<!-- Le pasamos al metodo onScroll el evento
+con el signo $event -->
+<div class="box" (scroll)="onScroll($event)">
+  <p >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Quia officiis aliquam error dignissimos recusandae,
+    eligendi repudiandae sit minima incidunt delectus.
+    Cupiditate ex velit cumque aliquam vitae exercitationem
+    quaerat consectetur doloremque.
+  </p>
+</div>
+
 <!-- Event Binding "Enlace de eventos" -->
 <h1>Eventos</h1>
 <button [disabled] = "bntDisable">Enviar</button>
