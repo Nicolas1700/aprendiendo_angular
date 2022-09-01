@@ -1,5 +1,19 @@
 
+
+
+<!-- *ngIf o un if -->
+<h2>*ngIf</h2>
+<input type="text"required [(ngModel)]="Person.name" />
+<p *ngIf="Person.name === 'nicolas' || Person.name === 'pedro' && Person.age === 18;
+    else elseBlock" >Soy {{Person.name}}</p>
+<!-- else -->
+<ng-template #elseBlock >
+  <p> Bloque de else</p>
+</ng-template>
+
+<hr/>
 <!-- Data [(binding)] ng model-->
+<h2>Ng model</h2>
 <h2>Ng model</h2>
 <!-- Habilitar modulo o paquete de formulario en
   app.module.ts -->
@@ -18,6 +32,7 @@
 <p>Valido: {{ inputName.valid }}</p>
 
 <br/>
+<hr>
 <!-- Ejemplo con la edad :) -->
 <input type="number" min="10" max="18" required #inputAge="ngModel" [(ngModel)]="Person.age" />
 <p>Valido: {{ inputAge.valid }}</p>
