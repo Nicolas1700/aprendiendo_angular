@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { product } from './product.model';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +13,50 @@ export class AppComponent {
   img = 'https://http2.mlstatic.com/D_NQ_NP_740980-MCO31567535004_072019-O.jpg';
   bntDisable = true;
   valueInput = 'Nicolas lo hizo :) ';
+
   Person = {
-    name: 'Nicolas',
+    name: 'nicolas',
     age: 18,
     avatar: 'https://http2.mlstatic.com/D_NQ_NP_740980-MCO31567535004_072019-O.jpg'
   }
+
+  /* *ngfor con objetos */
+  products: product[] = [
+    {
+      name: 'Aceite',
+      price: 18000,
+      img: './assets/imgs/aceite.jpg'
+    },
+    {
+      name: 'Aderesos',
+      price: 10000,
+      img: './assets/imgs/aderesos.jpg'
+    },
+    {
+      name: 'Blanqueador',
+      price: 4500,
+      img: './assets/imgs/blanqueador.jpg'
+    },
+    {
+      name: 'Desodorante',
+      price: 3500,
+      img: './assets/imgs/desodorante.jpg'
+    },
+    {
+      name: 'Jugo',
+      price: 2000,
+      img: './assets/imgs/jugo.jpeg',
+    }
+  ];
+
+  /* *ngfor */
+  names: string[] = ['Nicolas','Pedro','Juliana'];
+  newName: string = '';
+
+  /* *ngfor Ejemplo */
+  listMerc: string[] = ['Algo'];
+  newProduct: string = '';
+
   toggleButton () {
     /* Se niega el estado actual del boton,
     para obtener true o false segun el estado del boton
@@ -46,7 +86,23 @@ export class AppComponent {
     this.Person.name = element.value;
   }
 
-  /* Data [(binding)] */
+  addName () {
+    this.names.push(this.newName);
+    this.newName = '';
+  }
+
+  deletName(index: number){
+    this.names.splice(index,1);
+  }
+
+  addListMer () {
+    this.listMerc.push(this.newProduct);
+    this.newProduct = '';
+  }
+
+  deletListMerc (index: number){
+    this.listMerc.splice(index,1);
+  }
 
 
 }

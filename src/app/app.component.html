@@ -1,5 +1,56 @@
 
+<!-- *ngFor con objetos -->
+<h2>*ngFor con objetos</h2>
+<div>
+  <div *ngFor="let producto of products">
+    <h3>{{producto.name}}</h3>
+    <p>{{producto.price}}</p>
+    <img [src]="producto.img" alt="Imagen" width="100">
+  </div>
+</div>
+<hr>
+<!-- Ejemplo *ngFor por Yo :v -->
 
+<h2>Lista del mercado</h2>
+<input type="text" required [(ngModel)]="newProduct">
+<button (click)="addListMer()">Añadir producto </button>
+
+<ul>
+  <p>La lista de productos es: </p>
+  <li *ngFor="let product of listMerc; index as i">
+    {{product}}
+    <button (click)="deletListMerc(i)">Elimnar</button>
+  </li>
+</ul>
+
+<!-- *ngfor
+Se va a recorrer el array names,
+IMP: El elemento que queremos repetir tenga el
+*ngfor -->
+<h2> ngFor </h2>
+<ul ngModel>
+  <li *ngIf="names.length === 0"> La lista esta vacia :( </li>
+  <!-- Añadir nombre a el array names -->
+  <p> Añadir nombre: </p>
+
+  <input type="text" required [(ngModel)]="newName">
+  <button (click)="addName()">Añadir nombre</button>
+
+  <li *ngIf="names.length === 0"> La lista esta vacia :( </li>
+
+  <p>Solo el valor</p>
+  <li *ngFor="let name of names; index as i" >
+    El nombre es: {{name}}
+    <button (click)="deletName(i)">Elminar noombre :(</button>
+  </li>
+  <p>Posición y valor</p>
+  <!-- Obteniendo el indice -->
+  <li *ngFor="let name of names; index as posicion" >
+    En la posicion {{posicion}} el valor es: {{name}}
+  </li>
+</ul>
+
+<hr/>
 
 <!-- *ngIf o un if -->
 <h2>*ngIf</h2>
