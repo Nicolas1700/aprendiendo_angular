@@ -46,7 +46,12 @@ export class AppComponent {
       name: 'Jugo',
       price: 2000,
       img: './assets/imgs/jugo.jpeg',
-    }
+    },
+    {
+      name: 'Desodorante',
+      price: 3500,
+      img: './assets/imgs/desodorante.jpg'
+    },
   ];
 
   /* *ngfor */

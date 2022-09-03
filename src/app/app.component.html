@@ -1,14 +1,32 @@
 
 <!-- *ngFor con objetos -->
 <h2>*ngFor con objetos</h2>
-<div>
+<div class="products--gird">
   <div *ngFor="let producto of products">
+    <img [src]="producto.img" alt="Imagen">
     <h3>{{producto.name}}</h3>
     <p>{{producto.price}}</p>
-    <img [src]="producto.img" alt="Imagen" width="100">
   </div>
 </div>
 <hr>
+
+<!-- [ngSwitch] -->
+<input type="text" required [(ngModel)]="Person.name">
+<div [ngSwitch]="Person.name">
+  <p *ngSwitchCase="'nicolas'">
+    La persona es {{Person.name}} :)
+  </p>
+  <p *ngSwitchCase="'pedro'">
+    La persona es {{Person.name}} :(
+  </p>
+  <p *ngSwitchCase="'luis'">
+    La persona es {{Person.name}} :(
+  </p>
+  <p *ngSwitchDefault="">
+    No se reconoce su nombre :/
+  </p>
+</div>
+
 <!-- Ejemplo *ngFor por Yo :v -->
 
 <h2>Lista del mercado</h2>
@@ -113,7 +131,7 @@ con el signo $event -->
 
 <!-- Event Binding "Enlace de eventos" -->
 <h1>Eventos</h1>
-<button [disabled] = "bntDisable">Enviar</button>
+<button [disabled]="bntDisable">Enviar</button>
 <button (click)="toggleButton()"> Toogle Button :) </button>
 <br/>
 

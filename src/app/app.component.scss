@@ -5,3 +5,36 @@
   overflow: auto;
   background: red;
 }
+// Para movil
+.products--gird{
+  display: flex;
+  flex-direction: column;
+  div{
+    img{
+      width: 100%;
+      border: black 3px solid ;
+      border-radius: 10px;
+    }
+    h2, p {
+      margin: 0;
+    }
+  }
+}
+// Tablet
+@media screen and (min-width: 40em) {
+  .products--gird{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+  }
+}
+
+
+// Desktop
+@media screen and (min-width: 62em) {
+  .products--gird{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px;
+  }
+}
