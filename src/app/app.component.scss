@@ -2,7 +2,6 @@
 .box{
   height: 200px;
   width: 200px;
-  overflow: auto;
   background: red;
 }
 // Para movil
@@ -20,6 +19,38 @@
     }
   }
 }
+
+.line-error{
+  height: 0;
+  border-bottom: 1px solid;
+  // Agregamos las caracteristicas si contiene
+  // la siguiente clase
+  &.invalid{
+    border-color: red;
+  }
+  &.valid{
+    border-color: greenyellow;
+  }
+}
+
+.styles{
+  display: grid;
+  grid-template-columns: repeat(2 ifr);
+}
+
+.message-error{
+  background: red;
+  color: white;
+  transition: all linear 0.5s;
+  // Por defecto no se va aver
+  opacity: 0;
+  // Si le agregamos la clase invalid
+  &.invalid {
+    // Cambiamos la opacidad a 1
+    opacity: 1;
+  }
+}
+
 // Tablet
 @media screen and (min-width: 40em) {
   .products--gird{

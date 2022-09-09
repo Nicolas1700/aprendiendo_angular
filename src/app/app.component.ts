@@ -14,6 +14,19 @@ export class AppComponent {
   bntDisable = true;
   valueInput = 'Nicolas lo hizo :) ';
 
+  register = {
+    name: '',
+    email: '',
+    password: ''
+  }
+  
+  box = {
+    width: 100,
+    height: 100,
+    background: 'red'
+  }
+  whitdImg = 10;
+
   Person = {
     name: 'nicolas',
     age: 18,
@@ -109,5 +122,9 @@ export class AppComponent {
     this.listMerc.splice(index,1);
   }
 
+  onRegiter(){
+    //Se imprime el objeto de register
+    console.log(this.register);
+  }
 
 }
